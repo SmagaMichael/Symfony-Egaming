@@ -1,0 +1,21 @@
+
+.logoNav{
+    width:auto;
+    height:70px;
+}
+
+.navbar{
+    background-color: #222222;
+}
+.navbar-brand{
+    color:#44d62c;
+}
+
+.navbar-nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:gray;
+}
+.navbar-collapse{
+    justify-content:center;
+}

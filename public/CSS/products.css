@@ -1,0 +1,22 @@
+.card{
+    border: 1px ridge #44d62c;
+}
+
+.CardProducts{
+    height: 750px;
+}
+
+.buttonAddCart{
+    color:green;
+    width: 100%;
+    border: 10px ridge green;
+}
+.logocart{
+    width:50px;
+    height:auto;
+}
+.heart{
+    color:green;
+    border: 10px ridge green;
+}
+

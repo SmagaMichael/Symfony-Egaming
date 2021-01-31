@@ -1,0 +1,64 @@
+body{
+    background-color: black;
+     background-image: url(../IMG/background/bgBody.jpg);
+
+}
+
+.jumbotron-title{
+    padding-top:20px;
+    color:#44d62c;
+}
+.card-header{
+    background-color:#222222;
+}
+.card-body{
+    background-color:#222222;
+    color:gray;
+}
+
+.list-group-item{
+    background-color:#222222;
+    color:gray;
+}
+
+.card-img-top{
+    background-color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*_______________________________________________________________________________________________*/
+/* canvas {
+    position: absolute;
+    background-repeat: no-repeat;
+    height:100%;
+    width: 100%;
+}*/

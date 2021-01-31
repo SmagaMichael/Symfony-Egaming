@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading jumbotron-title">Produits</h1>
+            <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('home') }}">Accueil</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Produits</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-3">
+                <div class="card bg-light mb-3">
+                    <div class="card-header  text-white text-uppercase"><i class="fa fa-list"></i> Filtres</div>
+                    <form action="" method="post">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input type="checkbox" name="color[]" value="bleu" class="form-check-input" id="color-bleu"">
+                                    <label class="form-check-label" for="color-bleu">Bleu</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input type="checkbox" name="color[]" value="rouge" class="form-check-input" id="color-red">
+                                    <label class="form-check-label" for="color-red">Rouge</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input type="checkbox" name="color[]" value="vert" class="form-check-input" id="color-vert">
+                                    <label class="form-check-label" for="color-vert">Vert</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="btn btn-primary btn-block">Filtrer</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="card bg-light mb-3">
+                    <div class="card-header text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
+                    <ul class="list-group category_block">
+                        <li class="list-group-item"><a href="category.html">Cras justo odio</a></li>
+                        <li class="list-group-item"><a href="category.html">Dapibus ac facilisis in</a></li>
+                        <li class="list-group-item"><a href="category.html">Morbi leo risus</a></li>
+                        <li class="list-group-item"><a href="category.html">Porta ac consectetur ac</a></li>
+                        <li class="list-group-item"><a href="category.html">Vestibulum at eros</a></li>
+                    </ul>
+                </div>
+                <div class="card bg-light mb-3">
+                    <div class="card-header text-white text-uppercase">Dernier produit</div>
+                    <div class="card-body">
+                        <img class="img-fluid" src="{{ asset('IMG/uploads/' ~ LastProduct.image) }}" />
+                        <h5 class="card-title mt-3">{{ LastProduct.name }}</h5>
+                        <p class="card-text">{{ LastProduct.description }}</p>
+                        <p class="bloc_left_price">{{ LastProduct.price }} &euro;</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="row">
+
+                   {% for Entity in Entities %}
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card CardProducts mb-3">
+                                <img class="card-img-top" src="{{ asset('IMG/uploads/' ~ Entity.image) }}" alt="Card image cap">
+                                <div class="card-body cardProducts">
+                                    <h4 class="card-title">
+                                        <a href="{{ path('view_product', {slug: Entity.slug, id: Entity.id}) }}"
+                                           title="View Product">{{ Entity.name }}
+                                        </a>
+                                    </h4>
+
+                                    <p class="card-text"> {{ Entity.description }}</p>
+
+                                    <div class="row PriceHeartCart">
+                                        <div class="col-lg-12">
+                                            <p class="btn btn-danger btn-block">{{ Entity.price }} &euro;</p>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <button class="heart"><i class="fa-heart fa-2x far"></i></button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="" class="btn  buttonAddCart "><i class="fas fa-1x fa-cart-arrow-down"></i></a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a class="btn buttonAddCart" href="{{ path('edit', {id: Entity.id}) }}">Modifier</a>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <a class="btn buttonAddCart" href="{{ path('delete_product', {id: Entity.id}) }}">Supprimer</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   {% endfor %}
+
+
+
+
+                </div>
+                {{ knp_pagination_render(Entities) }}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
