@@ -89,19 +89,21 @@
                                         </a>
                                     </h4>
 
-                                    <p class="card-text"> {{ Entity.description }}</p>
+                                    <p class="card-text LimitDescription" > {{ Entity.description }}</p>
 
                                     <div class="row PriceHeartCart">
-                                        <div class="col-lg-12">
+                                        <div class="offset-lg-4 col-lg-6">
                                             <p class="btn btn-danger btn-block">{{ Entity.price }} &euro;</p>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <button class="heart"><i class="fa-heart fa-2x far"></i></button>
                                         </div>
+
                                         <div class="col-lg-6">
                                             <a href="" class="btn  buttonAddCart "><i class="fas fa-1x fa-cart-arrow-down"></i></a>
                                         </div>
+
                                         <div class="col-lg-6">
                                             <a class="btn buttonAddCart" href="{{ path('edit', {id: Entity.id}) }}">Modifier</a>
                                         </div>

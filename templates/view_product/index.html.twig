@@ -31,7 +31,7 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <a href="" data-toggle="modal" data-target="#productModal">
-                            <img class="img-fluid" src="{{ asset('IMG/' ~ OneProduct.image) }}" />
+                            <img class="img-fluid" src="{{ asset('IMG/uploads/' ~ OneProduct.image) }}" />
                             <p class="text-center">Zoom</p>
                         </a>
                     </div>
@@ -43,7 +43,7 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <p class="price">{{ OneProduct.price}} &euro;</p>
-
+                        <p class="price"> Catégorie : {{ OneProduct.pcstuff.name}} </p>
                         {% if OneProduct.promotion %}
                             <p class="price_discounted">149.90 &euro;</p>
                             <p>  {{ OneProduct.price}} - 149</p>

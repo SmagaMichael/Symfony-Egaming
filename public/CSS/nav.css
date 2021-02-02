@@ -19,3 +19,11 @@
 .navbar-collapse{
     justify-content:center;
 }
+.buttonsearch{
+    background-color: black;
+
+}
+.fa-search{
+    color:#44d62c;
+
+}

@@ -3,30 +3,53 @@
 namespace App\DataFixtures;
 
 use App\Entity\OneProduct;
-use App\Repository\OneProductRepository;
+use App\Entity\Pcstuff;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AppFixtures extends Fixture
 {
 
     private $slugger;
-
-    public function __construct(SluggerInterface $slugger){
+    private $passwordEncoder;
+    //On crée la variable
+    //Puis on apelle et on stock le service dans la variable
+    public function __construct(SluggerInterface $slugger, UserPasswordEncoderInterface  $passwordEncoder){
         $this->slugger = $slugger;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
-
     public function load(ObjectManager $manager)
-    {
+    { //On crée une instance de Faker pour générer les données aléatoires
         $faker = Factory::create('fr_FR');
 
+        //_________________________Création des USERS____________________________________________________________
 
+        $user = new User();
+        $user->setEmail('test@test.fr');
+        $user->setPassword($this->passwordEncoder->encodePassword($user, 'test'));
+        $user->setRoles(['ROLE_ADMIN']);
+        //permet de dire a doctrine d'insérer le User
+        $manager->persist($user);
+
+        //____________________________Création des catégories____________________________________________________
+        $stuffs = ['Clavier', 'Souris', 'Casque', 'Tapis de souris'];
+        foreach ($stuffs as $key => $stuff){
+            $pcstuff = new Pcstuff();
+            $pcstuff->setName($stuff);
+            $this->addReference('stuff-'.$key, $pcstuff);
+            $manager->persist($pcstuff);
+        }
+
+        //______________________________________________________________________________________________________
         for ($i = 1; $i <= 30; $i++) {
 
             $OneProduct = new OneProduct();
+            $pcstuff = $this->getReference('stuff-'.rand(0, count($stuffs)-1));
 
             $name = $faker->randomElement(['Razer', 'Logitech', 'ROCCAT', 'Asus', 'MSI']);
             $OneProduct->setName($name);
@@ -41,6 +64,8 @@ class AppFixtures extends Fixture
 
             $color = $faker->randomElement(['rouge', 'bleu', 'blanc', 'noir', 'vert']);
             $OneProduct->setColor($color);
+
+            $OneProduct->setPcstuff($pcstuff);
 
             $OneProduct->setImage($faker->randomElement([
                 'default.png', 'fixtures/1.png',  'fixtures/2.png',  'fixtures/3.png',

@@ -31,7 +31,15 @@ class OneProductRepository extends ServiceEntityRepository
             ;
     }
 
-
+    public function FindLastFourID()
+    {
+        return $this->createQueryBuilder('o')
+            ->orderBy('o.id', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 
     // /**

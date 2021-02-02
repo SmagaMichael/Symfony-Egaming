@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EditController!{% endblock %}
+{% block title %}Modifer un produit{% endblock %}
 
 {% block body %}
 
     <div class="container col-lg-4 FormAdd">
         {# J'affiche mon formulaire #}
-        <h1>Editer un produit</h1>
+        <h1>Editer {{ OneProduct.name }}</h1>
 
         {{ form_start(AddProductFormType) }} <!-- <form method="POST>">-->
 
@@ -18,7 +18,11 @@
 
 
         {{ form_widget(AddProductFormType) }}<!-- input-->
-        <button class="btn btn-primary">Ajouter</button>
+        <div class="EditImage">
+            <img class="img-fluid" src="{{ asset('IMG/uploads/' ~ OneProduct.image) }}" alt="">
+        </div>
+
+        <button class="btn btn-primary">Modifier</button>
         {{ form_end(AddProductFormType) }}<!-- </form>>-->
     </div>
 {% endblock %}

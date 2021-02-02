@@ -63,6 +63,14 @@ class OneProduct
      */
     private $promotion;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Pcstuff::class, inversedBy="oneProducts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pcstuff;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -175,4 +183,18 @@ class OneProduct
 
         return $this;
     }
+
+    public function getPcstuff(): ?pcstuff
+    {
+        return $this->pcstuff;
+    }
+
+    public function setPcstuff(?pcstuff $pcstuff): self
+    {
+        $this->pcstuff = $pcstuff;
+
+        return $this;
+    }
+
+
 }

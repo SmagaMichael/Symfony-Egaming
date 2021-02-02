@@ -3,7 +3,7 @@
 }
 
 .CardProducts{
-    height: 750px;
+    height: 660px;
 }
 
 .buttonAddCart{
@@ -17,6 +17,7 @@
 }
 .heart{
     color:green;
+    width: 100%;
     border: 10px ridge green;
 }
 
