@@ -25,21 +25,21 @@
     <nav class="navbar navbar-expand-md ">
         <div class="container">
             <a class="navbar-brand" href="{{ path('home') }}"><img class="logoNav" src="{{ asset('IMG/logo/logo.jpeg') }}" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" >
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler btnPrice" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" >
+                <span class="navbar-toggler-icon "><i class="fas fa-ghost"></i></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div class="collapse navbar-collapse " id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                        <a class="nav-link " href="{{ path('home') }}">Accueil</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('products') }}">Produits</a>
+                        <a class="nav-link " href="{{ path('products') }}">Produits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                        <a class="nav-link " href="{{ path('contact') }}">Contact</a>
                     </li>
                 </ul>
 
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </form>
-                <a class="btn btn-success m-3" href="{{ path('cart') }}">
+                <a class="btn btnPrice m-3" href="{{ path('cart') }}">
                     <i class="fa fa-shopping-cart"> Panier <span class=""> 3 </span></i>
                 </a>
 <!--
@@ -69,14 +69,14 @@
                 </ul>
 -->
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn btnPrice dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         {% if app.user %}
                             {{ app.user.username }}
                         {% else %}
                             Votre compte
                         {% endif %}
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <ul class="dropdown-menu btnPrice" aria-labelledby="dropdownMenuLink">
                         {% if app.user %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <li><a class="dropdown-item" href="{{ path ('add_product')}} ">Ajout produit</a></li>
@@ -109,7 +109,7 @@
 
 
     <!-- Footer -->
-    <footer class="text-light">
+    <footer class="">
 
         <div class="container">
             <div class="row">

@@ -41,6 +41,23 @@ class OneProductRepository extends ServiceEntityRepository
             ;
     }
 
+        //$pcstuff = id 1 2 3 4  de la catégorie
+    public function FindStuff($pcstuff){
+       // On selectionne tout les champs de la table one_product
+       // Select * FROM OneProduct
+        $qb = $this->createQueryBuilder('op') // op = one_product
+        //On joint la table one_product à la table pcstuff
+                    ->innerJoin('op.pcstuff', 'ps')
+                    ->andWhere('ps = :pcstuff')
+                    ->setParameter('pcstuff', $pcstuff);
+
+       // dump($qb->getQuery()->getResult());
+        return $qb->getQuery()->getResult();
+
+    }
+
+
+
 
     // /**
     //  * @return OneProduct[] Returns an array of OneProduct objects

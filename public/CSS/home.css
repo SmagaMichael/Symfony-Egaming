@@ -1,0 +1,52 @@
+.carousel-item img{
+    width: 100%;
+    height: 400px;
+}
+
+.cardHeart .card-body {
+    background-color: #010000;
+    color: #0de638;
+}
+.cardHeart .card-body a{
+    text-decoration: none;
+}
+
+
+
+.colorGreen{
+    color: #0de638;
+}
+.colorBlack{
+    color: #090101;
+}
+
+.bgcolorblack{
+    background-color: #010000;
+}
+.bgcolorGreen{
+    background-color: #1ebc1e;
+}
+
+.titreProduit{
+    text-decoration: none;
+    color: #0de638;
+}
+.addCart{
+    border:1px solid #0de638;
+    color:#0de638;
+}
+
+.btnPrice{
+    border:1px solid #0de638;
+    color:#0de638;
+}
+
+.linkGreen {
+    text-decoration: none;
+    color: #0de638;
+}
+
+.titreCardHeader{
+    font-weight: 700;
+    color: black;
+}

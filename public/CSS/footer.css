@@ -1,8 +1,12 @@
 footer {
-    background: #343a40;
+    /*background: linear-gradient(#51ee09, #e2d10e);*/
+    color: black;
     padding: 40px;
+    border: 5px ridge #15960e;
+    background-image: url(../IMG/background/bgfooter.jpg);
+    background-size: 20% 100%;
 }
 
 footer a {
-    color: #f8f9fa !important;
+    color: #000000 !important;
 }

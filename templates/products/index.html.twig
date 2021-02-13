@@ -15,7 +15,7 @@
             <div class="col">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ path('home') }}">Accueil</a></li>
+                        <li class="breadcrumb-item"><a class="linkGreen" href="{{ path('home') }}">Accueil</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Produits</li>
                     </ol>
                 </nav>
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-3">
                 <div class="card bg-light mb-3">
-                    <div class="card-header  text-white text-uppercase"><i class="fa fa-list"></i> Filtres</div>
+                    <div class="card-header bgcolorGreen  titreCardHeader text-uppercase"><i class="fa fa-list"></i> Filtres</div>
                     <form action="" method="post">
                         <ul class="list-group">
                             <li class="list-group-item">
@@ -49,28 +49,29 @@
                                 </div>
                             </li>
                             <li class="list-group-item">
-                                <button class="btn btn-primary btn-block">Filtrer</button>
+                                <button class="btn btnPrice btn-block">Filtrer</button>
                             </li>
                         </ul>
                     </form>
                 </div>
                 <div class="card bg-light mb-3">
-                    <div class="card-header text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
+                    <div class="card-header bgcolorGreen titreCardHeader text-uppercase"><i class="  fa fa-list"></i> Catégories</div>
+
                     <ul class="list-group category_block">
-                        <li class="list-group-item"><a href="category.html">Cras justo odio</a></li>
-                        <li class="list-group-item"><a href="category.html">Dapibus ac facilisis in</a></li>
-                        <li class="list-group-item"><a href="category.html">Morbi leo risus</a></li>
-                        <li class="list-group-item"><a href="category.html">Porta ac consectetur ac</a></li>
-                        <li class="list-group-item"><a href="category.html">Vestibulum at eros</a></li>
+
+                        {% for category in categories  %}
+                            <li class="list-group-item"><a class="titreProduit" href="{{ path('category', {'id':category.id}) }}">{{ category.name }}</a></li>
+                        {% endfor %}
                     </ul>
+
                 </div>
                 <div class="card bg-light mb-3">
-                    <div class="card-header text-white text-uppercase">Dernier produit</div>
+                    <div class="card-header bgcolorGreen titreCardHeader  text-uppercase">Dernier produit</div>
                     <div class="card-body">
                         <img class="img-fluid" src="{{ asset('IMG/uploads/' ~ LastProduct.image) }}" />
-                        <h5 class="card-title mt-3">{{ LastProduct.name }}</h5>
+                        <h5 class="card-title titreProduit mt-3">{{ LastProduct.name }}</h5>
                         <p class="card-text">{{ LastProduct.description }}</p>
-                        <p class="bloc_left_price">{{ LastProduct.price }} &euro;</p>
+                        <p class="btn btnPrice">{{ LastProduct.price }} &euro;</p>
                     </div>
                 </div>
             </div>
@@ -84,7 +85,7 @@
                                 <img class="card-img-top" src="{{ asset('IMG/uploads/' ~ Entity.image) }}" alt="Card image cap">
                                 <div class="card-body cardProducts">
                                     <h4 class="card-title">
-                                        <a href="{{ path('view_product', {slug: Entity.slug, id: Entity.id}) }}"
+                                        <a class="titreProduit" href="{{ path('view_product', {slug: Entity.slug, id: Entity.id}) }}"
                                            title="View Product">{{ Entity.name }}
                                         </a>
                                     </h4>
@@ -93,7 +94,7 @@
 
                                     <div class="row PriceHeartCart">
                                         <div class="offset-lg-4 col-lg-6">
-                                            <p class="btn btn-danger btn-block">{{ Entity.price }} &euro;</p>
+                                            <p class="btn btnPrice btn-block">{{ Entity.price }} &euro;</p>
                                         </div>
 
                                         <div class="col-lg-6">
@@ -104,14 +105,15 @@
                                             <a href="" class="btn  buttonAddCart "><i class="fas fa-1x fa-cart-arrow-down"></i></a>
                                         </div>
 
-                                        <div class="col-lg-6">
-                                            <a class="btn buttonAddCart" href="{{ path('edit', {id: Entity.id}) }}">Modifier</a>
-                                        </div>
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <div class="col-lg-6">
+                                                <a class="btn buttonAddCart" href="{{ path('edit', {id: Entity.id}) }}">Modifier</a>
+                                            </div>
 
-                                        <div class="col-lg-6">
-                                            <a class="btn buttonAddCart" href="{{ path('delete_product', {id: Entity.id}) }}">Supprimer</a>
-                                        </div>
-
+                                            <div class="col-lg-6">
+                                                <a class="btn buttonAddCart" href="{{ path('delete_product', {id: Entity.id}) }}">Supprimer</a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

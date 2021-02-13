@@ -7,7 +7,7 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <h1 class="colorGreen">Register</h1>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -18,6 +18,6 @@
             label:'J\'accepte les CGU',
         }) }}
 
-        <button type="submit" class="btn btn-primary">s'inscrire</button>
+        <button type="submit" class="btn btnPrice m-3">s'inscrire</button>
     {{ form_end(registrationForm) }}
 {% endblock %}

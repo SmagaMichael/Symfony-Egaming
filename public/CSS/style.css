@@ -1,6 +1,8 @@
 body{
     background-color: black;
-     background-image: url(../IMG/background/bgBody.jpg);
+    background-image: url(../IMG/background/bgBody.jpg);
+    background-size: 100% 100%;
+
 
 }
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\OneProduct;
 use App\Repository\OneProductRepository;
+use App\Repository\PcstuffRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,34 +17,41 @@ class ProductsController extends AbstractController
     /**
      * @Route("/products", name="products")
      */
-    public function index(Request $request, PaginatorInterface $paginator, OneProductRepository $OneProduct):Response
+    public function index(Request $request,
+                          PaginatorInterface $paginator,
+                          OneProductRepository $OneProduct,
+                          PcstuffRepository $pcstuffRepository):Response
     {
-        $Entity = $this->getDoctrine()->getRepository(OneProduct::class);
+     //   On crée la variable $Entity pour y stocker l’entité que l’on a envoyé dans la BDD
+     //« OneProduct » est égale au nom de l’entité que l’on a créé
 
+        $Entity = $this->getDoctrine()->getRepository(OneProduct::class);
+        $category = $pcstuffRepository->findAll();
 
 
         //_____________________PAGINATION_______________________________________________________
         // $Entities = $Entity->findAll();
+        //On crée la variable $Entities pour stocker tout ce qui se trouve dans l’entité (qui se trouve la BDD) que l'on passe dans pagination  afin d'avoir
+        //6 éléments par page , et que la page 1 soit celle par défaut
         $Entities = $paginator->paginate(
             $Entity->findAll(),
-            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
-            6 // Nombre de résultats par page
-        );
-        //__________________________FIND LAST ID ___________________________________________________________
+            $request->query->getInt('page', 1),6 );
+
+        //__________________________FIND LAST ID _______________________________________________
         $lastProduct = $OneProduct->FindLastId();
-        dump($lastProduct);
+        //dump($lastProduct);
         //________________________
         $lastProduct = $lastProduct[0];
-        dump($lastProduct);
+        //dump($lastProduct);
         //_____________________________________________________________________________________
 
 
 
         return $this->render('products/index.html.twig', [
             'Entities' => $Entities,
-            'LastProduct' => $lastProduct
+            'LastProduct' => $lastProduct,
+            'categories' => $category,
         ]);
     }
-
 
 }

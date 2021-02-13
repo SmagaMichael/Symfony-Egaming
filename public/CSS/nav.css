@@ -2,10 +2,14 @@
 .logoNav{
     width:auto;
     height:70px;
+    border:1px solid #0de638;
+
+
+
 }
 
 .navbar{
-    background-color: #222222;
+    background-color: #000000;
 }
 .navbar-brand{
     color:#44d62c;
@@ -14,8 +18,9 @@
 .navbar-nav a{
     text-decoration: none;
     text-transform: uppercase;
-    color:gray;
+    color:#44d62c;
 }
+
 .navbar-collapse{
     justify-content:center;
 }
