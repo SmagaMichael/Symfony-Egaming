@@ -1,18 +1,14 @@
-$('.fa-heart').click(function(){
-    let i = 0;
-//
-    if($(".heart").find(".far").length){
-        i++
-        $(".heart").find(".far").addClass("fas").removeClass("far")
-    }
 
-
-    else if($(".heart").find(".fas").length){
-        i = 0
-        $(".heart").find(".fas").addClass("far").removeClass("fas")
+$('.fa-heart').click(function() {
+    var $this = $(this);
+ 
+    if ($this.hasClass('far')) {
+        $this.removeClass('far').addClass('fas');
+    } else {
+        $this.removeClass('fas').addClass('far');
     }
-    $('.NbLikes').text('Likes : ' + i )
 });
+
 //____________________________AFFICHAGE DE L'IMAGE QUE l'ON VEUT SOUMETTRE____________________________________________________
 
 // On va corriger l'affichage du label pour l'upload des images

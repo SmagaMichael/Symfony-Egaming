@@ -3,10 +3,31 @@ footer {
     color: black;
     padding: 40px;
     border: 5px ridge #15960e;
-    background-image: url(../IMG/background/bgfooter.jpg);
-    background-size: 20% 100%;
+     /* background-image: url(../IMG/background/bgfooter2.jpg); */
+     background-color: #16960e; 
+    /* background-size: 20% 100%; */
+    height: auto;
 }
 
 footer a {
     color: #000000 !important;
+}
+
+.footer-item{
+    color: #000000;
+    background-color: #16960e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.copyright{
+    width: 100%;
+    background-color: black;
+    color: #15960e;
+    height: 40px;
+    text-align: center;
+}
+.copyright a{
+    text-decoration: none;
+    color: #15960e;
 }
