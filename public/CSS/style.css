@@ -2,9 +2,8 @@ body{
     background-color: black;
     background-image: url(../IMG/background/bgBody.jpg);
     background-size: 100% 100%;
-
-
 }
+
 
 .jumbotron-title{
     padding-top:20px;
@@ -25,6 +24,15 @@ body{
 
 .card-img-top{
     background-color:black;
+}
+
+.nav-link{
+    color:#44d62c;
+
+}
+.nav-link:hover{
+    color:#ffffff;
+
 }
 
 

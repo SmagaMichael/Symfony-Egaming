@@ -31,19 +31,37 @@
     text-decoration: none;
     color: #0de638;
 }
+.titreProduit:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
 .addCart{
     border:1px solid #0de638;
     color:#0de638;
+}
+.addCart:hover{
+    border:1px solid #0de638;
+    color:#0de638; 
+    background-color: black;
 }
 
 .btnPrice{
     border:1px solid #0de638;
     color:#0de638;
 }
+.btnPrice:hover{
+    border:1px solid #0de638;
+    color:#0de638; 
+    background-color: black;
+}
 
 .linkGreen {
     text-decoration: none;
     color: #0de638;
+}
+.linkGreen:hover {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .titreCardHeader{

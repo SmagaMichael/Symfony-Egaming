@@ -11,6 +11,11 @@
     width: 100%;
     border: 10px ridge green;
 }
+.buttonAddCart:hover{
+    color:rgb(255, 255, 255);
+    width: 100%;
+    border: 10px ridge green;
+}
 .logocart{
     width:50px;
     height:auto;
