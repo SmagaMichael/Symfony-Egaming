@@ -68,7 +68,7 @@
                 <div class="card bg-light mb-3">
                     <div class="card-header bgcolorGreen titreCardHeader  text-uppercase">Dernier produit</div>
                     <div class="card-body">
-                        <img class="img-fluid" src="{{ asset('IMG/uploads/' ~ LastProduct.image) }}" />
+                        <img class="img-fluid" src="{{ asset('img/uploads/' ~ LastProduct.image) }}" />
                         <h5 class="card-title titreProduit mt-3">{{ LastProduct.name }}</h5>
                         <p class="card-text">{{ LastProduct.description }}</p>
                         <p class="btn btnPrice">{{ LastProduct.price }} &euro;</p>
@@ -82,7 +82,7 @@
                    {% for Entity in Entities %}
                         <div class="col-12 col-md-6 col-lg-4 mb-3">
                             <div class="card CardProducts mb-3">
-                                <img class="card-img-top" src="{{ asset('IMG/uploads/' ~ Entity.image) }}" alt="Card image cap">
+                                <img class="card-img-top" src="{{ asset('img/uploads/' ~ Entity.image) }}" alt="Card image cap">
                                 <div class="card-body cardProducts">
                                     <h4 class="card-title">
                                         <a class="titreProduit" href="{{ path('view_product', {slug: Entity.slug, id: Entity.id}) }}"

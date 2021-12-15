@@ -21,21 +21,21 @@
                     </ol>
                     <div class="carousel-inner col-lg-9">
                         <div class="carousel-item active">
-                            <img src="{{ asset('IMG/background/bgcover1.jpg') }}" class="d-block " alt="...">
+                            <img src="{{ asset('img/background/bgcover1.jpg') }}" class="d-block " alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5></h5>
                                 <p></p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('IMG/background/bgcover2.jpg') }}" class="d-block" alt="...">
+                            <img src="{{ asset('img/background/bgcover2.jpg') }}" class="d-block" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5></h5>
                                 <p></p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('IMG/background/bgcover3.jpg') }}" class="d-block " alt="...">
+                            <img src="{{ asset('img/background/bgcover3.jpg') }}" class="d-block " alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5></h5>
                                 <p></p>
@@ -57,7 +57,7 @@
                     <div class="card-header titreCardHeader text-uppercase text-center bgcolorGreen">
                         <i class="fa fa-heart colorBlack "></i> Coup de coeur
                     </div>
-                    <img class="img-fluid border-0" src="{{ asset('IMG/background/heart.jpg') }}" alt="Card image cap">
+                    <img class="img-fluid border-0" src="{{ asset('img/background/heart.jpg') }}" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title text-center"><a href="#" class="titreProduit" title="View Product">Produit</a></h4>
                         <div class="row">
@@ -87,7 +87,7 @@
                             {% for Last4 in Last4ID %}
                                 <div class="col-lg-3">
                                     <div class="card mt-2">
-                                        <img class="card-img-top" src="{{ asset('IMG/uploads/' ~ Last4.image) }}" alt="Card image cap">
+                                        <img class="card-img-top" src="{{ asset('img/uploads/' ~ Last4.image) }}" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><a class="titreProduit" href="{{ path('view_product', {slug: Last4.slug, id: Last4.id}) }}" title="View Product">{{ Last4.name }}</a></h4>
                                             <p class="card-text LimitDescription">{{ Last4.description }}</p>
@@ -132,7 +132,7 @@
                                                 <p class="btn btnPrice btn-block">99.00 &euro;</p>
                                             </div>
                                             <div class="col">
-                                                <a href="cart.html" class="btn btn-block addCart">Ajouter au panier</a>
+                                                <a href="" class="btn btn-block addCart">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +149,7 @@
                                                 <p class="btn btnPrice btn-block">99.00 &euro;</p>
                                             </div>
                                             <div class="col">
-                                                <a href="cart.html" class="btn btn-block addCart">Ajouter au panier</a>
+                                                <a href="" class="btn btn-block addCart">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                                 <p class="btn btnPrice btn-block">99.00 &euro;</p>
                                             </div>
                                             <div class="col">
-                                                <a href="cart.html" class="btn btn-block addCart">Ajouter au panier</a>
+                                                <a href="" class="btn btn-block addCart">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@
                                                 <p class="btn btnPrice btn-block">99.00 &euro;</p>
                                             </div>
                                             <div class="col">
-                                                <a href="cart.html" class="btn btnPrice btn-block addCart">Ajouter au panier</a>
+                                                <a href="" class="btn btnPrice btn-block addCart">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
