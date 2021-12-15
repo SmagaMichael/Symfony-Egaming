@@ -35,7 +35,7 @@ class AddProductController extends AbstractController
              //dump($form->getData()); //Permet de faire un dump
              // et vérifie si le formulaire a bien transmis ce que l'on veut
              //$OneProduct est la meme chose que getData car on l'a rajouter dans le createform
-             dump($OneProduct);
+            //  dump($OneProduct);
 
              //__________________UPLOAD IMAGE___________________________________________
                /** @var UploadedFile $image */

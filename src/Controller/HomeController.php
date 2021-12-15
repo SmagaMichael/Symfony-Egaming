@@ -17,7 +17,7 @@ class HomeController extends AbstractController
     {
         //__________________________FIND LAST 4 ID ___________________________________________________________
         $last4Product = $OneProductRepository->FindLastFourID();
-        dump($last4Product);
+        // dump($last4Product);
 
         //_____________________________________________________________________________________
 
